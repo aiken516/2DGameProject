@@ -57,6 +57,11 @@ namespace _2DGameProject
 
         public override void Collide(CollideGameObject collideGameObject)
         {
+            if (collideGameObject is Player)
+            {
+                return;
+            }
+
             X -= prevXMove;
             Y -= prevYMove;
         }

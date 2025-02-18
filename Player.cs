@@ -55,6 +55,11 @@ namespace _2DGameProject
 
         public override void Collide(CollideGameObject collideGameObject)
         {
+            if (collideGameObject is Monster)
+            {
+                return;
+            }
+
             X -= prevXMove;
             Y -= prevYMove;
         }

@@ -57,7 +57,12 @@ namespace _2DGameProject
         {
             if (collideGameObject is Monster)
             {
+                World.Instance.GameOver();
                 return;
+            }
+            else if (collideGameObject is Goal)
+            {
+                World.Instance.GameClear();
             }
 
             X -= prevXMove;

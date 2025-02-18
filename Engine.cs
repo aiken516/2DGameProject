@@ -38,52 +38,8 @@ namespace _2DGameProject
 
         public void Load()
         {
-            string[] scene = {
-                "**********",
-                "*P       *",
-                "*        *",
-                "*** * * **",
-                "*        *",
-                "*   M    *",
-                "*        *",
-                "*        *",
-                "*       G*",
-                "**********"
-            };
-
             world = new World();
-
-            for (int y = 0; y < scene.Length; y++)
-            {
-                for (int x = 0; x < scene[y].Length; x++)
-                {
-                    if (scene[y][x] == '*')
-                    {
-                        Wall wall = new Wall(x, y, scene[y][x]);
-                        world.Instantiate(wall);
-                    }
-                    else if (scene[y][x] == 'P')
-                    {
-                        Player player = new Player(x, y, scene[y][x]);
-                        world.Instantiate(player);
-                    }
-                    else if (scene[y][x] == 'M')
-                    {
-                        Monster monster = new Monster(x, y, scene[y][x]);
-                        world.Instantiate(monster);
-                    }
-                    else if (scene[y][x] == 'G')
-                    {
-                        Goal goal = new Goal(x, y, scene[y][x]);
-                        world.Instantiate(goal);
-                    }
-                    else if (scene[y][x] == ' ')
-                    {
-                        Floor floor = new Floor(x, y, scene[y][x]);
-                        world.Instantiate(floor);
-                    }
-                }
-            }
+            world.Load();
 
             isRunning = true;
         }
@@ -100,7 +56,6 @@ namespace _2DGameProject
 
         private void Render()
         {
-            Console.Clear();
             world.Render();
         }
 

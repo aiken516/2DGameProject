@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace _2DGameProject
 {
-    public class Goal : GameObject
+    public class Goal : CollideGameObject
     {
         public Goal()
         {
